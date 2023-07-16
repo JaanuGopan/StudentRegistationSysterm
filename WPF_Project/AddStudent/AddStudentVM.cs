@@ -4,6 +4,7 @@ using Microsoft.Win32;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -23,7 +24,7 @@ namespace WPF_Project.AddStudent
         public int age;
 
         [ObservableProperty]
-        public string dateofbirth;
+        public DateTime dateofbirth;
 
         [ObservableProperty]
         public double gpa;
@@ -47,7 +48,7 @@ namespace WPF_Project.AddStudent
         }
         public AddStudentVM()
         {
-
+            Dateofbirth = DateTime.Today;
         }
 
 
@@ -122,6 +123,29 @@ namespace WPF_Project.AddStudent
 
 
         }
-
+        [RelayCommand]
+        public void CloseWindow()
+        {
+            if (firstname == null)
+            {
+                student = new Students()
+                {
+                    FirstName = null,
+                    LastName = null,
+                    Age = 1,
+                    Image = null,
+                    DateOfBirth =DateTime.Today,
+                    GPA = 0.00
+                };
+            }
+            else
+            {
+                Save();
+                
+            }
+            
+            CloseAction();
+            Application.Current.MainWindow.Show();
+        }
     }
 }

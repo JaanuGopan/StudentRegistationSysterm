@@ -35,14 +35,11 @@ namespace WPF_Project
             AddStudentWindow window = new AddStudentWindow(vm);
             window.ShowDialog();
 
-            if (vm.student.FirstName == null)
-            {
-                MessageBox.Show("Please Enter The Details..", "Warning!");
-            }
-            else
+            if (vm.student.FirstName != null)
             {
                 people.Add(vm.student);
             }
+           
         }
 
         [RelayCommand]
@@ -78,11 +75,15 @@ namespace WPF_Project
             BitmapImage image3 = new BitmapImage(new Uri("/Profile Picture/3.png", UriKind.Relative));
             BitmapImage image4 = new BitmapImage(new Uri("/Profile Picture/4.png", UriKind.Relative));
 
+            DateTime bd1 = new DateTime(2000, 02, 04);
+            DateTime bd2 = new DateTime(2000, 05, 14);
+            DateTime bd3 = new DateTime(2000, 07, 24);
+            DateTime bd4 = new DateTime(2000, 01, 22);
 
-            people.Add(new Students("Janugopan", "Sundaramoorthy", 23,image1, 3.25,"04/02/2000"));
-            people.Add(new Students("Harintharan", "Nagalingam", 25, image2, 3.56, "04/02/2000"));
-            people.Add(new Students("Lakshayan", "Thavaraja", 23,image3, 3.78, "04/02/2000"));
-            people.Add(new Students("Yashokaran", "Phushparaj", 24, image4, 3.44, "04/02/2000"));
+            people.Add(new Students("Janugopan", "Sundaramoorthy", 23,image1, 3.25,bd1));
+            people.Add(new Students("Harintharan", "Nagalingam", 25, image2, 3.56, bd2));
+            people.Add(new Students("Lakshayan", "Thavaraja", 23,image3, 3.78, bd3));
+            people.Add(new Students("Yashokaran", "Phushparaj", 24, image4, 3.44, bd4));
            
         }
 

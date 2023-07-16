@@ -11,12 +11,12 @@ namespace WPF_Project
     {
         public string FirstName { set; get; }
         public string LastName { set; get; }
-        public string DateOfBirth { set; get; }
+        public DateTime DateOfBirth { set; get; }
         public int Age { set; get; }
         public BitmapImage Image { get; set; }
         public double GPA { set; get; }
 
-        public Students(string firstName, string lastName, int age, BitmapImage imageUrl, double gpa, string dateOfBirth)
+        public Students(string firstName, string lastName, int age, BitmapImage imageUrl, double gpa, DateTime dateOfBirth)
         {
             FirstName = firstName;
             LastName = lastName;

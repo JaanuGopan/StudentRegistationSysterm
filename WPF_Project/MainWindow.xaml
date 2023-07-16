@@ -119,7 +119,7 @@
                                                 <GradientStop Color="#c61828" Offset="1"/>
                                             </LinearGradientBrush>
                                         </Border.Background>
-                                        <TextBlock Text="{Binding DateOfBirth}" Style="{StaticResource ListText}"/>
+                                        <TextBlock Text="{Binding DateOfBirth , StringFormat={}{0:dd/MM/yyyy} ,UpdateSourceTrigger=PropertyChanged}" Style="{StaticResource ListText}"/>
                                     </Border>
                                 </Grid>
 

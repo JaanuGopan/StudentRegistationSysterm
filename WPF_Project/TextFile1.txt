@@ -1,0 +1,13 @@
+﻿people = new ObservableCollection<Students>();
+            people.Add(new Students("Janugopan", "Sundaramoorthy", 23, "1.png", 3.25,"04/02/2000"));
+            people.Add(new Students("Harintharan", "Nagalingam", 25, "2.png", 3.56, "04/02/2000"));
+            people.Add(new Students("Lakshayan", "Thavaraja", 23, "3.png", 3.78, "04/02/2000"));
+            people.Add(new Students("Yashokaran", "Phushparaj", 24, "4.png", 3.44, "04/02/2000"));
+            people.Add(new Students("Sajanthan", "Naventhiraraja", 23, "5.png",3.25, "04/02/2000"));
+            people.Add(new Students("Sivakanth", "Karunakaran", 23, "6.png", 3.00, "04/02/2000"));
+            people.Add(new Students("Mathushagan", "Jegannathan", 23, "6.png", 3.98, "04/02/2000"));
+            people.Add(new Students("Anujan", "Ithayarajan", 23, "6.png", 3.98, "04/02/2000"));
+            people.Add(new Students("Agaker", "Chandrasekaram", 23, "6.png", 3.98, "04/02/2000"));
+            people.Add(new Students("Sathujan", "Rajesh", 23, "6.png", 3.98, "04/02/2000"));
+            people.Add(new Students("Thikojan", "Rathnasingam", 23, "6.png", 3.98, "22/07/1999"));
+            people.Add(new Students("Shahmi", "Abdul Jabbar", 23, "1.png", 3.98, "19/05/2000"));

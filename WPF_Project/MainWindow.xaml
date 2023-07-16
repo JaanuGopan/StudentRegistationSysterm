@@ -1,0 +1,153 @@
+﻿<Window x:Class="WPF_Project.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WPF_Project" xmlns:Icon="http://metro.mahapps.com/winfx/xaml/iconpacks"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="600" Width="800"
+        AllowsTransparency="True"
+        WindowStyle="None"
+        Background="Transparent"
+        WindowStartupLocation="CenterScreen"
+        MinHeight="700"
+        MinWidth="800">
+    <Window.DataContext>
+        <local:MainWindowVM/>
+    </Window.DataContext>
+    <Grid>
+        <Border CornerRadius="30 0 30 30" Grid.Column="0">
+            <Border.Background>
+                <LinearGradientBrush StartPoint="0 0" EndPoint="1 1">
+                    <GradientStop Color="#ff4649" Offset="0"/>
+                    <GradientStop Color="#c61828" Offset="1"/>
+                </LinearGradientBrush>
+            </Border.Background>
+            <Grid>
+
+                <StackPanel>
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="750"/>
+                            <ColumnDefinition Width="50"/>
+                        </Grid.ColumnDefinitions>
+                        <Border Grid.Column="0">
+                            <TextBlock Text="Students Details" Style="{StaticResource titleText}"/>
+
+                        </Border>
+                        <Border Grid.Column="1">
+                            <Button Style="{StaticResource circleButton2}" Click="Button_Click">
+                                <Icon:PackIconMaterial Name="closeicon" Kind="Close" Height="30" Width="30" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                            </Button>
+                        </Border>
+
+
+                    </Grid>
+                    <Border Height="5" Background="White"/>
+
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="350"/>
+                            <ColumnDefinition Width="auto"/>
+                            <ColumnDefinition Width="auto"/>
+                            <ColumnDefinition Width="auto"/>
+                        </Grid.ColumnDefinitions>
+                        <Border Padding="5" Margin="5" BorderBrush="Black"  CornerRadius="5" Width="350" Grid.Column="0" >
+                            <TextBlock Text="Name" Style="{StaticResource titleText2}"/>
+                        </Border>
+                        <Border Padding="5" Margin="5" BorderBrush="Black"  CornerRadius="5" Width="70" Grid.Column="1">
+                            <TextBlock Text="Age" Style="{StaticResource titleText2}"/>
+                        </Border>
+                        <Border Padding="5" Margin="5" BorderBrush="Black"  CornerRadius="5" Width="80" Grid.Column="2">
+                            <TextBlock Text="GPA" Style="{StaticResource titleText2}"/>
+                        </Border>
+                        <Border Padding="5" Margin="5" BorderBrush="Black"  CornerRadius="5" Width="180" Grid.Column="3">
+                            <TextBlock Text="Date Of Birth" Style="{StaticResource titleText2}"/>
+                        </Border>
+
+                    </Grid>
+                    <ListView ItemsSource="{Binding People, UpdateSourceTrigger=PropertyChanged}" 
+                              Background="AliceBlue" Height="500" 
+                              SelectedItem="{Binding SelectedStudent,UpdateSourceTrigger=PropertyChanged}">
+                        <ListView.ItemTemplate>
+                            <DataTemplate>
+                                <Grid>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="350"/>
+                                        <ColumnDefinition Width="auto"/>
+                                        <ColumnDefinition Width="auto"/>
+                                        <ColumnDefinition Width="auto"/>
+                                    </Grid.ColumnDefinitions>
+                                    <Border Padding="5" Margin="5" BorderBrush="Black"  CornerRadius="5" Width="350" Grid.Column="0">
+                                        <Border.Background>
+                                            <LinearGradientBrush StartPoint="0 0" EndPoint="1 1">
+                                                <GradientStop Color="#ff4649" Offset="0"/>
+                                                <GradientStop Color="#c61828" Offset="1"/>
+                                            </LinearGradientBrush>
+                                        </Border.Background>
+                                        <StackPanel Orientation="Horizontal">
+                                            <Image Source="{Binding Image}" Height="30" Width="30" Margin="5"/>
+                                            <TextBlock Style="{StaticResource ListText}"
+                                           Text="{Binding FirstName}"/>
+                                            <TextBlock Style="{StaticResource ListText}"
+                                           Text="{Binding LastName}"/>
+
+                                        </StackPanel>
+                                    </Border>
+                                    <Border Padding="5" Margin="5" BorderBrush="Black"  CornerRadius="5" Width="70" Grid.Column="1">
+                                        <Border.Background>
+                                            <LinearGradientBrush StartPoint="0 0" EndPoint="1 1">
+                                                <GradientStop Color="#ff4649" Offset="0"/>
+                                                <GradientStop Color="#c61828" Offset="1"/>
+                                            </LinearGradientBrush>
+                                        </Border.Background>
+                                        <TextBlock Text="{Binding Age}" Style="{StaticResource ListText}"/>
+                                    </Border>
+                                    <Border Padding="5" Margin="5" BorderBrush="Black"  CornerRadius="5" Width="80" Grid.Column="2">
+                                        <Border.Background>
+                                            <LinearGradientBrush StartPoint="0 0" EndPoint="1 1">
+                                                <GradientStop Color="#ff4649" Offset="0"/>
+                                                <GradientStop Color="#c61828" Offset="1"/>
+                                            </LinearGradientBrush>
+                                        </Border.Background>
+                                        <TextBlock Text="{Binding GPA}" Style="{StaticResource ListText}"/>
+                                    </Border>
+                                    <Border Padding="5" Margin="5" BorderBrush="Black"  CornerRadius="5" Width="180" Grid.Column="3">
+                                        <Border.Background>
+                                            <LinearGradientBrush StartPoint="0 0" EndPoint="1 1">
+                                                <GradientStop Color="#ff4649" Offset="0"/>
+                                                <GradientStop Color="#c61828" Offset="1"/>
+                                            </LinearGradientBrush>
+                                        </Border.Background>
+                                        <TextBlock Text="{Binding DateOfBirth}" Style="{StaticResource ListText}"/>
+                                    </Border>
+                                </Grid>
+
+
+                            </DataTemplate>
+                        </ListView.ItemTemplate>
+
+                    </ListView>
+                    <Grid >
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="1*"/>
+                            <ColumnDefinition Width="1*"/>
+                            <ColumnDefinition Width="1*"/>
+                        </Grid.ColumnDefinitions>
+                        <Border Grid.Column="0" Margin="5">
+                            <Button Style="{StaticResource mainButton}" Content="Add Student" Command="{Binding AddStudentCommand}"/>
+                        </Border>
+                        <Border Grid.Column="1" Margin="5">
+                            <Button Style="{StaticResource mainButton}" Content="Edit Student" Command="{Binding EditStudentCommand}"/>
+                        </Border>
+                        <Border Grid.Column="2" Margin="5">
+                            <Button Style="{StaticResource mainButton}" Content="Remove Select" Command="{Binding DeleteStudentCommand}"/>
+                        </Border>
+                    </Grid>             
+                </StackPanel>
+
+            </Grid>
+        </Border>
+
+    </Grid>
+</Window>

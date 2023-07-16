@@ -4,6 +4,7 @@ using Microsoft.Win32;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -122,6 +123,36 @@ namespace WPF_Project.AddStudent
 
 
         }
+        [RelayCommand]
+        public void CloseWindow()
+        {
+            if (student == null)
+            {
+                student = new Students()
+                {
+                    FirstName = null,
+                    LastName = null,
+                    Age = 0,
+                    Image = null,
+                    DateOfBirth =null,
+                    GPA = 0.00
+                };
+            }
+            else
+            {
+                student.FirstName = firstname;
+                student.LastName = lastname;
+                student.Age = age;
+                student.GPA = gpa;
+                student.Image = selectedImage;
+                student.DateOfBirth = dateofbirth;
+            }
+            if (student.FirstName != null)
+            {
 
+                CloseAction();
+            }
+            Application.Current.MainWindow.Show();
+        }
     }
 }

@@ -35,14 +35,11 @@ namespace WPF_Project
             AddStudentWindow window = new AddStudentWindow(vm);
             window.ShowDialog();
 
-            if (vm.student.FirstName == null)
-            {
-                MessageBox.Show("Please Enter The Details..", "Warning!");
-            }
-            else
+            if (vm.student.FirstName != null)
             {
                 people.Add(vm.student);
             }
+           
         }
 
         [RelayCommand]

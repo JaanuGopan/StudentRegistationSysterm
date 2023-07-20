@@ -1,4 +1,4 @@
-﻿using CommunityToolkit.Mvvm.ComponentModel;
+using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
 using Microsoft.Win32;
 using System;
@@ -122,6 +122,28 @@ namespace WPF_Project.AddStudent
             Application.Current.MainWindow.Show();
 
 
+        }
+        [RelayCommand]
+        public void CloseWindow()
+        {
+            if (firstname == null)
+            {
+
+                student = new Students()
+                {
+                    FirstName = null,
+                    LastName = null,
+                    DateOfBirth = DateTime.Today,
+                    GPA = 0.00,
+                    Image = null
+                };
+
+            }
+            else Save();
+            
+            CloseAction();
+
+            Application.Current.MainWindow.Show();
         }
 
     }

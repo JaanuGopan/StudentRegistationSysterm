@@ -123,29 +123,6 @@ namespace WPF_Project.AddStudent
 
 
         }
-        [RelayCommand]
-        public void CloseWindow()
-        {
-            if (firstname == null)
-            {
-                student = new Students()
-                {
-                    FirstName = null,
-                    LastName = null,
-                    Age = 1,
-                    Image = null,
-                    DateOfBirth =DateTime.Today,
-                    GPA = 0.00
-                };
-            }
-            else
-            {
-                Save();
-                
-            }
-            
-            CloseAction();
-            Application.Current.MainWindow.Show();
-        }
+
     }
 }

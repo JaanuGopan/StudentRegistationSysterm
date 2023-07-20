@@ -31,7 +31,7 @@ namespace WPF_Project
         public void AddStudent()
         {
             var vm = new AddStudentVM();
-            vm.title = "ADD USER";
+            vm.title = "Add Student";
             AddStudentWindow window = new AddStudentWindow(vm);
             window.ShowDialog();
 
@@ -48,7 +48,7 @@ namespace WPF_Project
             if (selectedStudent != null)
             {
                 var vm = new AddStudentVM(selectedStudent);
-                vm.title = "EDIT USER";
+                vm.title = "Edit Student";
                 var window = new AddStudentWindow(vm);
 
                 window.ShowDialog();
